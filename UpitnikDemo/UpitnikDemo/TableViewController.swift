@@ -80,6 +80,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func setupTableView(){
         let tableViewCustome = UITableView()
         tableViewCustome.separatorStyle = .none
+        tableViewCustome.isScrollEnabled = false
         tableViewCustome.register(AnswerCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(tableViewCustome)
         
