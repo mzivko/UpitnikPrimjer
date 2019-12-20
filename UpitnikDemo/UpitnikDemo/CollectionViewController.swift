@@ -130,11 +130,9 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
             cell.view.layer.borderWidth = 3
         }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    
-        print(collectionData[indexPath.row])
         if let cell = collectionView.cellForItem(at: indexPath) as? AnswerCollectionViewCell{
             cell.view.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             cell.view.layer.borderWidth = 2
