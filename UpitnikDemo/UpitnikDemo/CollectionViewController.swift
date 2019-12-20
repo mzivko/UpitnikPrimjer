@@ -31,10 +31,21 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         layout.itemSize = CGSize(width: width, height: width)
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextPage))
+        
         setupNavigationBar()
         setupLabels()
         setupProgressView()
         setupCollectionView()
+    }
+    
+    @objc func nextPage(){
+        let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View2") as? CollectionViewController {
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+        }
     }
     
     func setupNavigationBar(){
@@ -86,6 +97,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         collectionView.register(AnswerCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
         collectionView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        collectionView.allowsMultipleSelection = true
         
         self.view.addSubview(collectionView)
         
@@ -116,13 +128,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         if let cell = collectionView.cellForItem(at: indexPath) as? AnswerCollectionViewCell{
             cell.view.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             cell.view.layer.borderWidth = 3
-            
-            let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View2") as? CollectionViewController {
-                    self.navigationController?.pushViewController(viewController, animated: true)
-                }
-            }
         }
     }
 
