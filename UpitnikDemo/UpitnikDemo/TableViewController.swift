@@ -86,11 +86,15 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableViewCustome.snp.makeConstraints{ make in
             make.bottom.leading.trailing.equalToSuperview()
-            make.top.equalTo(containerView.snp.bottom)
+            make.top.equalTo(containerView.snp.bottom).offset(15)
         }
         
         tableViewCustome.delegate = self
         tableViewCustome.dataSource = self
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

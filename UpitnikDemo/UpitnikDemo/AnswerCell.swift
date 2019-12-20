@@ -24,8 +24,7 @@ class AnswerCell: UITableViewCell {
         //buttonState(cellButton)
         
         cellButton.snp.makeConstraints{ make in
-            make.edges.equalToSuperview().inset(7)
-            make.height.equalTo(55)
+            make.edges.equalToSuperview().inset(10)
         }
     }
     

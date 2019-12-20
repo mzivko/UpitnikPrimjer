@@ -11,6 +11,7 @@ import SnapKit
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    let nextButton = UIButton()
     let containerView = UIView()
     let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     var collectionData = ["🍓", "🍗", "🍑", "👩🏼‍🦳", "📚", "👙", "💤", "🌟"]
@@ -31,12 +32,14 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         layout.itemSize = CGSize(width: width, height: width)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(nextPage))
-        
         setupNavigationBar()
         setupLabels()
         setupProgressView()
         setupCollectionView()
+        setupNextButton()
+        
+        nextButton.addTarget(self, action: #selector(nextPage), for: .touchUpInside)
+        
     }
     
     @objc func nextPage(){
@@ -93,8 +96,21 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    func setupCollectionView(){
+    func setupNextButton(){
         
+        nextButton.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        nextButton.setImage(UIImage(named: "nextScreen"), for: .normal)
+        
+        self.view.addSubview(nextButton)
+        
+        nextButton.snp.makeConstraints{ make in
+            make.bottom.equalToSuperview().offset(-100)
+            make.trailing.equalToSuperview().offset(-20)
+            make.height.equalTo(nextButton.snp.width)
+        }
+    }
+    
+    func setupCollectionView(){
         collectionView.register(AnswerCollectionViewCell.self, forCellWithReuseIdentifier: "collectionCell")
         collectionView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         collectionView.allowsMultipleSelection = true
@@ -103,7 +119,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         collectionView.snp.makeConstraints{ make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(containerView.snp.bottom)
+            make.top.equalTo(containerView.snp.bottom).offset(15)
         }
         
         collectionView.delegate = self
