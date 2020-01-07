@@ -106,6 +106,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         nextButton.snp.makeConstraints{ make in
             make.bottom.equalToSuperview().offset(-100)
             make.trailing.equalToSuperview().offset(-20)
+            make.width.equalTo(40)
             make.height.equalTo(nextButton.snp.width)
         }
     }
