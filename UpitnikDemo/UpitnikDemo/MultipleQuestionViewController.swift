@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class MultipleQuestionViewController: QuestionBaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let nextButton = UIButton()
     let containerView = UIView()
@@ -45,7 +45,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     @objc func nextPage(){
         let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View2") as? CollectionViewController {
+            if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View2") as? MultipleQuestionViewController {
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }

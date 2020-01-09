@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Single Question View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="View" id="BYZ-38-t0r" customClass="TableViewController" customModule="UpitnikDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="View" id="BYZ-38-t0r" customClass="SingleQuestionViewController" customModule="UpitnikDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="1849" y="-187"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Multiple Question View Controller-->
         <scene sceneID="4aT-Ij-1uP">
             <objects>
-                <viewController storyboardIdentifier="View2" id="AIv-SG-I1c" customClass="CollectionViewController" customModule="UpitnikDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="View2" id="AIv-SG-I1c" customClass="MultipleQuestionViewController" customModule="UpitnikDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M9K-0U-sCR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,6 +67,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aNe-qe-h49" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Jgs-0J-HWF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -82,7 +83,6 @@
         <!--Navigation Controller-->
         <scene sceneID="UvH-sI-wDo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ap8-cq-WVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jGu-vW-GK0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="downloads" id="Vth-nt-Izh"/>
                     <toolbarItems/>
@@ -95,6 +95,7 @@
                         <segue destination="AIv-SG-I1c" kind="relationship" relationship="rootViewController" id="Zdw-RZ-KhS"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ap8-cq-WVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="892" y="591"/>
         </scene>

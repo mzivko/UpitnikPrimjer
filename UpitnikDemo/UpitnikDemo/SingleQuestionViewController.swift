@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SingleQuestionViewController: QuestionBaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     let containerView = UIView()
     let answers = ["💪🏻 I train every day", "🙂 A couple timer per week", "😕 Not enough"]
@@ -29,7 +29,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         setupLabels()
         setupProgressView()
         setupTableView()
-        
+    
     }
     
     func setupNavigationBar(){
@@ -116,7 +116,7 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View") as? TableViewController {
+                if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View") as? SingleQuestionViewController {
                     self.navigationController?.pushViewController(viewController, animated: true)
                 }
             }
