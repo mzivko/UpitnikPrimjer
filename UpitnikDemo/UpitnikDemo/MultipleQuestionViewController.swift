@@ -12,9 +12,17 @@ import SnapKit
 class MultipleQuestionViewController: QuestionBaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let nextButton = UIButton()
-    let containerView = UIView()
     let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     var collectionData = ["🍓", "🍗", "🍑", "👩🏼‍🦳", "📚", "👙", "💤", "🌟"]
+    var selectedAnswers = [Answer]()
+    
+    override init(question: Question) {
+        super.init(question: question)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +51,9 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
     }
     
     @objc func nextPage(){
-        let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View2") as? MultipleQuestionViewController {
-                self.navigationController?.pushViewController(viewController, animated: true)
+        let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] timer in
+            if let answers = self?.selectedAnswers {
+                self?.userFinishedSelection?(answers)
             }
         }
     }
@@ -79,20 +86,6 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
         secondPartOnboardingLabel.snp.makeConstraints{ make in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(containerView).inset(15)
-        }
-    }
-    
-    func setupProgressView(){
-        let progressView = UIProgressView()
-        progressView.progressTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        progressView.trackTintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        progressView.progress = 0.5
-        containerView.addSubview(progressView)
-        
-        progressView.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalTo(3)
         }
     }
     
@@ -129,14 +122,14 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionData.count
+        return question.answers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! AnswerCollectionViewCell
-        cell.emojiLabel.text = collectionData[indexPath.row]
-        cell.textLabel.text = "Some text"
+        cell.emojiLabel.text = question.answers[indexPath.row].emoji
+        cell.textLabel.text = question.answers[indexPath.row].text
         return cell
         
     }
@@ -145,6 +138,7 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
         if let cell = collectionView.cellForItem(at: indexPath) as? AnswerCollectionViewCell{
             cell.view.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             cell.view.layer.borderWidth = 3
+            selectedAnswers.append(question.answers[indexPath.row])
         }
     }
     
@@ -153,6 +147,7 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
         if let cell = collectionView.cellForItem(at: indexPath) as? AnswerCollectionViewCell{
             cell.view.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
             cell.view.layer.borderWidth = 2
+            selectedAnswers.removeAll{$0 == question.answers[indexPath.row]}
         }
         
     }

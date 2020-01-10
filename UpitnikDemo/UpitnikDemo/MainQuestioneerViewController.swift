@@ -19,12 +19,11 @@ class MainQuestionnaireViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         questionList = getQuestions()
-        showQuestion(index: 0)
-        
+        showQuestion(index: 0)        
     }
     
     func showQuestion(index: Int) {
-        if questionList.count > 0 {
+        if questionList.count > index {
             let question = questionList[index]
             presentQuestionController(question: question)
         }
@@ -36,16 +35,17 @@ class MainQuestionnaireViewController: UIViewController {
         
         switch question.type {
         case .singleSelection:
-             vc = SingleQuestionViewController()
+             vc = SingleQuestionViewController(question: question)
             break
         case .multipleSelection:
-             vc = MultipleQuestionViewController()
+            vc = MultipleQuestionViewController(question: question)
             break
         }
         
         vc.registerUserSelectedAnswers { [weak self] (answers) in
             self?.answersReceived(answerList: answers)
         }
+        vc.setupProgressViewValue(progressValue: Float(Float(currentQuestionIndex + 1) / Float(questionList.count)))
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -54,10 +54,15 @@ class MainQuestionnaireViewController: UIViewController {
         receivedAnswers.append(answerList)
         currentQuestionIndex += 1
         
-        if currentQuestionIndex <= questionList.count{
+        if currentQuestionIndex < questionList.count {
             showQuestion(index: currentQuestionIndex)
         } else {
-            //nema pitanja, kontaktiraj server 
+            //nema pitanja, kontaktiraj server
+            print("Dobili smo sve odgovore")
+            for i in 0...questionList.count - 1 {
+                print(questionList[i].title)
+                print(receivedAnswers[i])
+            }
         }
     }
     
@@ -72,8 +77,9 @@ class MainQuestionnaireViewController: UIViewController {
         
         let question1 = Question(answers: [answer1, answer2, answer3], id: "goals", title: "goals", type: .singleSelection)
         let question2 = Question(answers: [answer2, answer1, answer3], id: "new goals", title: "new goals", type: .singleSelection)
+        let question3 = Question(answers: [answer2, answer1, answer3], id: "new  multiple goals", title: "new multiple  goals", type: .multipleSelection)
         
-        return [question1, question2]
+        return [question1, question3, question2]
     }
 }
 
@@ -93,7 +99,7 @@ public struct Question {
     
 }
 
-public struct Answer {
+public struct Answer: Equatable {
     
     let emoji: String
     let text: String

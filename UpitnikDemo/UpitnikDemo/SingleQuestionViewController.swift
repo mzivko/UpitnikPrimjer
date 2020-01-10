@@ -11,12 +11,20 @@ import SnapKit
 
 class SingleQuestionViewController: QuestionBaseViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let containerView = UIView()
     let answers = ["💪🏻 I train every day", "🙂 A couple timer per week", "😕 Not enough"]
+    
+    override init(question: Question) {
+        super.init(question: question)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
         containerView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         self.view.addSubview(containerView)
         
@@ -63,18 +71,8 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
         }
     }
     
-    func setupProgressView(){
-        let progressView = UIProgressView()
-        progressView.progressTintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        progressView.trackTintColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-        progressView.progress = 0.5
-        containerView.addSubview(progressView)
+    public func setupProgressViewValue(){
         
-        progressView.snp.makeConstraints{ make in
-            make.bottom.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalTo(3)
-        }
     }
     
     func setupTableView(){
@@ -103,7 +101,7 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AnswerCell
-        cell.textLabel?.text = answers[indexPath.row]
+        cell.textLabel?.text = question.answers[indexPath.row].text
         cell.selectionStyle = .none
         return cell
     }
@@ -114,10 +112,9 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
             cell.cellButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             cell.cellButton.layer.borderWidth = 3
             
-            let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "View") as? SingleQuestionViewController {
-                    self.navigationController?.pushViewController(viewController, animated: true)
+            let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] timer in
+                if let answer = self?.question.answers[indexPath.row] {
+                    self?.userFinishedSelection?([answer])
                 }
             }
         }

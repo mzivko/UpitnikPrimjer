@@ -10,7 +10,6 @@
 		0EC7B44203B89A0861650C8B /* Pods_UpitnikDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F5B4C9C08306D1420BBE74 /* Pods_UpitnikDemo.framework */; };
 		FE1551EE23AA312A001AF6AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1551ED23AA312A001AF6AC /* AppDelegate.swift */; };
 		FE1551F023AA312A001AF6AC /* SingleQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1551EF23AA312A001AF6AC /* SingleQuestionViewController.swift */; };
-		FE1551F323AA312A001AF6AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1551F123AA312A001AF6AC /* Main.storyboard */; };
 		FE1551F523AA312A001AF6AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE1551F423AA312A001AF6AC /* Assets.xcassets */; };
 		FE1551F823AA312A001AF6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1551F623AA312A001AF6AC /* LaunchScreen.storyboard */; };
 		FE15520023AA52A7001AF6AC /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1551FF23AA52A7001AF6AC /* AnswerCell.swift */; };
@@ -28,7 +27,6 @@
 		FE1551EA23AA312A001AF6AC /* UpitnikDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpitnikDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE1551ED23AA312A001AF6AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE1551EF23AA312A001AF6AC /* SingleQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleQuestionViewController.swift; sourceTree = "<group>"; };
-		FE1551F223AA312A001AF6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE1551F423AA312A001AF6AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE1551F723AA312A001AF6AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE1551F923AA312A001AF6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */,
 				FE1551FF23AA52A7001AF6AC /* AnswerCell.swift */,
 				FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */,
-				FE1551F123AA312A001AF6AC /* Main.storyboard */,
 				FE1551F423AA312A001AF6AC /* Assets.xcassets */,
 				FE1551F623AA312A001AF6AC /* LaunchScreen.storyboard */,
 				FE1551F923AA312A001AF6AC /* Info.plist */,
@@ -168,7 +165,6 @@
 			files = (
 				FE1551F823AA312A001AF6AC /* LaunchScreen.storyboard in Resources */,
 				FE1551F523AA312A001AF6AC /* Assets.xcassets in Resources */,
-				FE1551F323AA312A001AF6AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,14 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FE1551F123AA312A001AF6AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE1551F223AA312A001AF6AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FE1551F623AA312A001AF6AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
