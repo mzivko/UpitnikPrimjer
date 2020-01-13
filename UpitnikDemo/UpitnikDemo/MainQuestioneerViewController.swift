@@ -70,16 +70,24 @@ class MainQuestionnaireViewController: UIViewController {
     //ide u servis
     func getQuestions() -> [Question] {
         
-        let answer1 = Answer(emoji: "😂", text: "happy", value: "happy")
-        let answer2 = Answer(emoji: "😕", text: "sad", value: "sad")
-        let answer3 = Answer(emoji: "🌟", text: "star", value: "star")
+        let answer1 = Answer(emoji: "💪🏻", text: "I train every day", value: "every_day")
+        let answer2 = Answer(emoji: "😊", text: "A couple times per week", value: "couple_times_per_week")
+        let answer3 = Answer(emoji: "😕", text: "Not enough", value: "not_enough")
+        let answer4 = Answer(emoji: "🍓", text: "Lose weight", value: "lose_weight")
+        let answer5 = Answer(emoji: "🍗", text: "Gain weight", value: "gain_weight")
+        let answer6 = Answer(emoji: "🍑", text: "Better sex", value: "better_sex")
+        let answer7 = Answer(emoji: "👩🏼‍🦳", text: "Anti age", value: "anti_age")
+        let answer8 = Answer(emoji: "📚", text: "Improve productivity", value: "improve_productivity")
+        let answer9 = Answer(emoji: "👙", text: "Get fit", value: "get_fit")
+        let answer10 = Answer(emoji: "💤", text: "Feel more rested", value: "feel_rested")
+        let answer11 = Answer(emoji: "🌟", text: "Strenghten your mind", value: "strenghten_mind")
         
         
         let question1 = Question(answers: [answer1, answer2, answer3], id: "goals", title: "goals", type: .singleSelection)
         let question2 = Question(answers: [answer2, answer1, answer3], id: "new goals", title: "new goals", type: .singleSelection)
-        let question3 = Question(answers: [answer2, answer1, answer3], id: "new  multiple goals", title: "new multiple  goals", type: .multipleSelection)
+        let question3 = Question(answers: [answer4, answer5, answer6, answer7, answer8, answer9, answer10, answer11], id: "new  multiple goals", title: "new multiple  goals", type: .multipleSelection)
         
-        return [question1, question3, question2]
+        return [question1, question3, question2, question2]
     }
 }
 

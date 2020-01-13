@@ -113,7 +113,7 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
         
         collectionView.snp.makeConstraints{ make in
             make.leading.trailing.bottom.equalToSuperview()
-            make.top.equalTo(containerView.snp.bottom).offset(15)
+            make.top.equalTo(containerView.snp.bottom).offset(0)
         }
         
         collectionView.delegate = self

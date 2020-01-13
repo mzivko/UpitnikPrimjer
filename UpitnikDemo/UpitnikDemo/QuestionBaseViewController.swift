@@ -39,7 +39,7 @@ class QuestionBaseViewController: UIViewController {
         progressView.snp.makeConstraints{ make in
             make.bottom.equalToSuperview()
             make.width.equalToSuperview()
-            make.height.equalTo(3)
+            make.height.equalTo(4)
         }
     }
     

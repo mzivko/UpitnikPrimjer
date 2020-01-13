@@ -84,7 +84,7 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
         
         tableViewCustome.snp.makeConstraints{ make in
             make.bottom.leading.trailing.equalToSuperview()
-            make.top.equalTo(containerView.snp.bottom).offset(15)
+            make.top.equalTo(containerView.snp.bottom).offset(0)
         }
         
         tableViewCustome.delegate = self
@@ -101,7 +101,8 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AnswerCell
-        cell.textLabel?.text = question.answers[indexPath.row].text
+        let wholeAnswer = "\(question.answers[indexPath.row].emoji) \(question.answers[indexPath.row].text)"
+        cell.textLabel?.text = wholeAnswer
         cell.selectionStyle = .none
         return cell
     }
