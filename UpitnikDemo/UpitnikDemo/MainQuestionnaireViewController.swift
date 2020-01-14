@@ -60,9 +60,15 @@ class MainQuestionnaireViewController: UIViewController {
             //nema pitanja, kontaktiraj server
             print("Dobili smo sve odgovore")
             for i in 0...questionList.count - 1 {
-                print(questionList[i].title)
                 print(receivedAnswers[i])
             }
+            
+            let alertController = UIAlertController(title: "Finished!", message:
+                "You answered to all questiones!", preferredStyle: UIAlertController.Style.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+            
         }
     }
     
