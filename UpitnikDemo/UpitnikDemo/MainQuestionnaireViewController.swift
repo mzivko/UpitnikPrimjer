@@ -40,6 +40,9 @@ class MainQuestionnaireViewController: UIViewController {
         case .multipleSelection:
             vc = MultipleQuestionViewController(question: question)
             break
+        case .heightSelection:
+            vc = HeightQuestionViewController(question: question)
+            break
         }
         
         vc.registerUserSelectedAnswers { [weak self] (answers) in
@@ -92,21 +95,30 @@ class MainQuestionnaireViewController: UIViewController {
         let question1 = Question(answers: [answer1, answer2, answer3], id: "goals", title: "goals", type: .singleSelection)
         let question2 = Question(answers: [answer2, answer1, answer3], id: "new goals", title: "new goals", type: .singleSelection)
         let question3 = Question(answers: [answer4, answer5, answer6, answer7, answer8, answer9, answer10, answer11], id: "new  multiple goals", title: "new multiple  goals", type: .multipleSelection)
+        let question4 = Question(answers: [], id: "", title: "", type: .heightSelection)
         
-        return [question1, question3, question2, question2]
+        return [question4, question1, question3, question2, question2]
     }
 }
 
 
 public enum QuestionType {
     
-    case singleSelection, multipleSelection
+    case singleSelection, multipleSelection, heightSelection
     
 }
 
 public struct Question {
     
     let answers: [Answer]
+    let id: String
+    let title: String
+    let type: QuestionType
+    
+}
+
+public struct QuestionHeight {
+    
     let id: String
     let title: String
     let type: QuestionType

@@ -14,6 +14,8 @@
 		FE1551F823AA312A001AF6AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE1551F623AA312A001AF6AC /* LaunchScreen.storyboard */; };
 		FE15520023AA52A7001AF6AC /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1551FF23AA52A7001AF6AC /* AnswerCell.swift */; };
 		FE15520223AA5BD1001AF6AC /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE15520123AA5BD1001AF6AC /* NewTableViewCell.swift */; };
+		FE37D7E623CF527A0064290C /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE37D7E523CF527A0064290C /* Example.storyboard */; };
+		FE70F54A23E9B20900E17A05 /* HeightQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70F54923E9B20900E17A05 /* HeightQuestionViewController.swift */; };
 		FE8C3DE823ACB9FC000044F0 /* MultipleQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */; };
 		FE8C3DEA23ACC1E3000044F0 /* AnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */; };
 		FEB27F6123C4C87E00114227 /* MainQuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB27F6023C4C87E00114227 /* MainQuestionnaireViewController.swift */; };
@@ -32,6 +34,8 @@
 		FE1551F923AA312A001AF6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE1551FF23AA52A7001AF6AC /* AnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		FE15520123AA5BD1001AF6AC /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
+		FE37D7E523CF527A0064290C /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
+		FE70F54923E9B20900E17A05 /* HeightQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightQuestionViewController.swift; sourceTree = "<group>"; };
 		FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleQuestionViewController.swift; sourceTree = "<group>"; };
 		FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCollectionViewCell.swift; sourceTree = "<group>"; };
 		FEB27F6023C4C87E00114227 /* MainQuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuestionnaireViewController.swift; sourceTree = "<group>"; };
@@ -93,12 +97,14 @@
 				FEB27F6223C4CE8E00114227 /* QuestionBaseViewController.swift */,
 				FE1551EF23AA312A001AF6AC /* SingleQuestionViewController.swift */,
 				FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */,
+				FE70F54923E9B20900E17A05 /* HeightQuestionViewController.swift */,
 				FE1551FF23AA52A7001AF6AC /* AnswerCell.swift */,
 				FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */,
 				FE1551F423AA312A001AF6AC /* Assets.xcassets */,
 				FE1551F623AA312A001AF6AC /* LaunchScreen.storyboard */,
 				FE1551F923AA312A001AF6AC /* Info.plist */,
 				FE15520123AA5BD1001AF6AC /* NewTableViewCell.swift */,
+				FE37D7E523CF527A0064290C /* Example.storyboard */,
 			);
 			path = UpitnikDemo;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 			files = (
 				FE1551F823AA312A001AF6AC /* LaunchScreen.storyboard in Resources */,
 				FE1551F523AA312A001AF6AC /* Assets.xcassets in Resources */,
+				FE37D7E623CF527A0064290C /* Example.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +228,7 @@
 				FE15520023AA52A7001AF6AC /* AnswerCell.swift in Sources */,
 				FEB27F6323C4CE8E00114227 /* QuestionBaseViewController.swift in Sources */,
 				FE1551F023AA312A001AF6AC /* SingleQuestionViewController.swift in Sources */,
+				FE70F54A23E9B20900E17A05 /* HeightQuestionViewController.swift in Sources */,
 				FE15520223AA5BD1001AF6AC /* NewTableViewCell.swift in Sources */,
 				FE1551EE23AA312A001AF6AC /* AppDelegate.swift in Sources */,
 				FE8C3DEA23ACC1E3000044F0 /* AnswerCollectionViewCell.swift in Sources */,
