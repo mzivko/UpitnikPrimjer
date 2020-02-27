@@ -78,7 +78,7 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
     func setupTableView(){
         let tableViewCustome = UITableView()
         tableViewCustome.separatorStyle = .none
-        tableViewCustome.isScrollEnabled = false
+        tableViewCustome.isScrollEnabled = true
         tableViewCustome.register(AnswerCell.self, forCellReuseIdentifier: "cell")
         self.view.addSubview(tableViewCustome)
         
@@ -92,7 +92,7 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 550.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,17 +101,18 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AnswerCell
-        let wholeAnswer = "\(question.answers[indexPath.row].emoji) \(question.answers[indexPath.row].text)"
-        cell.textLabel?.text = wholeAnswer
-        cell.selectionStyle = .none
+        //let wholeAnswer = "\(question.answers[indexPath.row].emoji) \(question.answers[indexPath.row].text)"
+        //cell.textLabel?.text = wholeAnswer
+        //cell.selectionStyle = .none
+        //cell.imageView?.image = UIImage(named: "bella")
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? AnswerCell{
             cell.accessoryType = .checkmark
-            cell.cellButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            cell.cellButton.layer.borderWidth = 3
+            cell.cellMainView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cell.cellMainView.layer.borderWidth = 3
             
             let _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] timer in
                 if let answer = self?.question.answers[indexPath.row] {
@@ -124,8 +125,8 @@ class SingleQuestionViewController: QuestionBaseViewController, UITableViewDeleg
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? AnswerCell{
             cell.accessoryType = .none
-            cell.cellButton.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
-            cell.cellButton.layer.borderWidth = 2
+            cell.cellMainView.layer.borderColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
+            cell.cellMainView.layer.borderWidth = 2
         }
     }
 }

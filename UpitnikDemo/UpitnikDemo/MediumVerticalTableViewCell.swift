@@ -1,16 +1,16 @@
 //
-//  AnswerCell.swift
+//  MediumVerticalTableViewCell.swift
 //  UpitnikDemo
 //
-//  Created by Marko Zivko on 18/12/2019.
-//  Copyright © 2019 Marko Zivko. All rights reserved.
+//  Created by Marko Zivko on 27/02/2020.
+//  Copyright © 2020 Marko Zivko. All rights reserved.
 //
 
 import UIKit
-import SnapKit
 
-class AnswerCell: UITableViewCell {
-
+class MediumVerticalTableViewCell: UITableViewCell {
+    
+    
     let cellMainView = UIView()
     let topImageView = UIImageView()
     let workoutTypeLabel = UILabel()
@@ -30,17 +30,17 @@ class AnswerCell: UITableViewCell {
         }
         
         self.topImageView.contentMode = .scaleToFill
-        self.topImageView.image = UIImage(named: "workout")
+        self.topImageView.image = UIImage(named: "workout1")
         self.cellMainView.addSubview(self.topImageView)
         
         self.topImageView.snp.makeConstraints { (make) in
             make.width.equalToSuperview().inset(5)
-            make.height.equalToSuperview().dividedBy(1.5)
+            make.height.equalTo(self.cellMainView.snp.width).multipliedBy(0.5)
             make.top.equalToSuperview().offset(5)
             make.centerX.equalToSuperview()
         }
         
-        self.workoutTypeLabel.text = "Pilates"
+        self.workoutTypeLabel.text = "Fitness"
         self.workoutTypeLabel.textColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         self.workoutTypeLabel.font = .systemFont(ofSize: 10.0)
         self.cellMainView.addSubview(self.workoutTypeLabel)
@@ -50,7 +50,7 @@ class AnswerCell: UITableViewCell {
             make.leading.equalTo(self.topImageView.snp.leading)
         }
         
-        self.workoutTitleLabel.text = "Full Body Pilates"
+        self.workoutTitleLabel.text = "Workout title"
         self.workoutTitleLabel.font = .boldSystemFont(ofSize: 21.0)
         self.cellMainView.addSubview(self.workoutTitleLabel)
         
@@ -82,7 +82,7 @@ class AnswerCell: UITableViewCell {
             make.trailing.equalToSuperview()
         }
         
-        self.workoutStartLabel.text = "Start"
+        self.workoutStartLabel.text = "Continue reading"
         self.workoutStartLabel.textColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         self.workoutStartLabel.font = .systemFont(ofSize: 12.0)
         self.cellMainView.addSubview(self.workoutStartLabel)
@@ -96,4 +96,5 @@ class AnswerCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

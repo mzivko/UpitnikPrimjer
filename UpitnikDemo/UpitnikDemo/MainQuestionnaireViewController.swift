@@ -40,9 +40,12 @@ class MainQuestionnaireViewController: UIViewController {
         case .multipleSelection:
             vc = MultipleQuestionViewController(question: question)
             break
-        case .heightSelection:
-            vc = HeightQuestionViewController(question: question)
+        default:
+            vc = MultipleQuestionViewController(question: question)
             break
+//        case .heightSelection:
+//            vc = HeightQuestionViewController(question: question)
+//            break
         }
         
         vc.registerUserSelectedAnswers { [weak self] (answers) in

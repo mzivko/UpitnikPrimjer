@@ -18,6 +18,7 @@
 		FE70F54A23E9B20900E17A05 /* HeightQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE70F54923E9B20900E17A05 /* HeightQuestionViewController.swift */; };
 		FE8C3DE823ACB9FC000044F0 /* MultipleQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */; };
 		FE8C3DEA23ACC1E3000044F0 /* AnswerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */; };
+		FE92B4B42407BF620039D692 /* MediumVerticalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */; };
 		FEB27F6123C4C87E00114227 /* MainQuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB27F6023C4C87E00114227 /* MainQuestionnaireViewController.swift */; };
 		FEB27F6323C4CE8E00114227 /* QuestionBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB27F6223C4CE8E00114227 /* QuestionBaseViewController.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		FE70F54923E9B20900E17A05 /* HeightQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightQuestionViewController.swift; sourceTree = "<group>"; };
 		FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleQuestionViewController.swift; sourceTree = "<group>"; };
 		FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerCollectionViewCell.swift; sourceTree = "<group>"; };
+		FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumVerticalTableViewCell.swift; sourceTree = "<group>"; };
 		FEB27F6023C4C87E00114227 /* MainQuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuestionnaireViewController.swift; sourceTree = "<group>"; };
 		FEB27F6223C4CE8E00114227 /* QuestionBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				FE1551F923AA312A001AF6AC /* Info.plist */,
 				FE15520123AA5BD1001AF6AC /* NewTableViewCell.swift */,
 				FE37D7E523CF527A0064290C /* Example.storyboard */,
+				FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */,
 			);
 			path = UpitnikDemo;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				FE15520223AA5BD1001AF6AC /* NewTableViewCell.swift in Sources */,
 				FE1551EE23AA312A001AF6AC /* AppDelegate.swift in Sources */,
 				FE8C3DEA23ACC1E3000044F0 /* AnswerCollectionViewCell.swift in Sources */,
+				FE92B4B42407BF620039D692 /* MediumVerticalTableViewCell.swift in Sources */,
 				FE8C3DE823ACB9FC000044F0 /* MultipleQuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

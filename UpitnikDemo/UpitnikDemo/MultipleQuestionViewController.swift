@@ -35,10 +35,12 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
             make.height.equalTo(view.frame.height / 3)
         }
         
-        let width = (view.frame.size.width - 20) / 2
+        let width = (view.frame.size.width) * 0.6
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         
-        layout.itemSize = CGSize(width: width, height: width)
+        layout.itemSize = CGSize(width: width, height: 100.0)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 10
         
         setupNavigationBar()
         setupLabels()
@@ -112,8 +114,9 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
         self.view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints{ make in
-            make.leading.trailing.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.top.equalTo(containerView.snp.bottom).offset(0)
+            make.height.equalTo(180)
         }
         
         collectionView.delegate = self
@@ -128,7 +131,7 @@ class MultipleQuestionViewController: QuestionBaseViewController, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! AnswerCollectionViewCell
-        cell.emojiLabel.text = question.answers[indexPath.row].emoji
+        //cell.emojiLabel.text = question.answers[indexPath.row].emoji
         cell.textLabel.text = question.answers[indexPath.row].text
         return cell
         
