@@ -15,7 +15,7 @@ fileprivate struct Constants {
 class AnswerCollectionViewCell: UICollectionViewCell {
     
     let view = UIView()
-    var vitaminLabel = UILabel()
+    var vitaminLabel = UIImageView()
     var backView = UIView()
     var titleLabel = UILabel()
     var instructionsLabel = UILabel()
@@ -46,12 +46,11 @@ class AnswerCollectionViewCell: UICollectionViewCell {
         }
         
         //TODO: will be changed to image view
-        self.vitaminLabel.text = "💎"
-        self.vitaminLabel.font = .systemFont(ofSize: 34.0)
+        self.vitaminLabel.image = UIImage(named: "workout")
         self.backView.addSubview(self.vitaminLabel)
         
         self.vitaminLabel.snp.makeConstraints { (make) in
-            make.center.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
         
         self.titleLabel.text = "Vitamin D"
