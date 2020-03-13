@@ -21,6 +21,7 @@
 		FE92B4B42407BF620039D692 /* MediumVerticalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */; };
 		FEB27F6123C4C87E00114227 /* MainQuestionnaireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB27F6023C4C87E00114227 /* MainQuestionnaireViewController.swift */; };
 		FEB27F6323C4CE8E00114227 /* QuestionBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB27F6223C4CE8E00114227 /* QuestionBaseViewController.swift */; };
+		FEED5AC8241A6CE500301CD0 /* BirthDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEED5AC7241A6CE500301CD0 /* BirthDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumVerticalTableViewCell.swift; sourceTree = "<group>"; };
 		FEB27F6023C4C87E00114227 /* MainQuestionnaireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQuestionnaireViewController.swift; sourceTree = "<group>"; };
 		FEB27F6223C4CE8E00114227 /* QuestionBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBaseViewController.swift; sourceTree = "<group>"; };
+		FEED5AC7241A6CE500301CD0 /* BirthDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +101,9 @@
 				FEB27F6223C4CE8E00114227 /* QuestionBaseViewController.swift */,
 				FE1551EF23AA312A001AF6AC /* SingleQuestionViewController.swift */,
 				FE8C3DE723ACB9FC000044F0 /* MultipleQuestionViewController.swift */,
+				FEED5AC7241A6CE500301CD0 /* BirthDateViewController.swift */,
 				FE70F54923E9B20900E17A05 /* HeightQuestionViewController.swift */,
+				FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */,
 				FE1551FF23AA52A7001AF6AC /* AnswerCell.swift */,
 				FE8C3DE923ACC1E3000044F0 /* AnswerCollectionViewCell.swift */,
 				FE1551F423AA312A001AF6AC /* Assets.xcassets */,
@@ -107,7 +111,6 @@
 				FE1551F923AA312A001AF6AC /* Info.plist */,
 				FE15520123AA5BD1001AF6AC /* NewTableViewCell.swift */,
 				FE37D7E523CF527A0064290C /* Example.storyboard */,
-				FE92B4B32407BF620039D692 /* MediumVerticalTableViewCell.swift */,
 			);
 			path = UpitnikDemo;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				FEB27F6123C4C87E00114227 /* MainQuestionnaireViewController.swift in Sources */,
 				FE15520023AA52A7001AF6AC /* AnswerCell.swift in Sources */,
+				FEED5AC8241A6CE500301CD0 /* BirthDateViewController.swift in Sources */,
 				FEB27F6323C4CE8E00114227 /* QuestionBaseViewController.swift in Sources */,
 				FE1551F023AA312A001AF6AC /* SingleQuestionViewController.swift in Sources */,
 				FE70F54A23E9B20900E17A05 /* HeightQuestionViewController.swift in Sources */,

@@ -37,8 +37,8 @@ class MainQuestionnaireViewController: UIViewController {
         case .singleSelection:
              vc = SingleQuestionViewController(question: question)
             break
-        case .multipleSelection:
-            vc = MultipleQuestionViewController(question: question)
+        case .birthSelection:
+            vc = BirthDateViewController(question: question)
             break
         default:
             vc = MultipleQuestionViewController(question: question)
@@ -95,7 +95,7 @@ class MainQuestionnaireViewController: UIViewController {
         let answer11 = Answer(emoji: "🌟", text: "Strenghten your mind", value: "strenghten_mind")
         
         
-        let question1 = Question(answers: [answer1, answer2, answer3], id: "goals", title: "goals", type: .singleSelection)
+        let question1 = Question(answers: [answer1, answer2, answer3], id: "goals", title: "goals", type: .birthSelection)
         let question2 = Question(answers: [answer2, answer1, answer3], id: "new goals", title: "new goals", type: .singleSelection)
         let question3 = Question(answers: [answer4, answer5, answer6, answer7, answer8, answer9, answer10, answer11], id: "new  multiple goals", title: "new multiple  goals", type: .multipleSelection)
         let question4 = Question(answers: [], id: "", title: "", type: .heightSelection)
@@ -107,7 +107,7 @@ class MainQuestionnaireViewController: UIViewController {
 
 public enum QuestionType {
     
-    case singleSelection, multipleSelection, heightSelection
+    case singleSelection, multipleSelection, heightSelection, birthSelection
     
 }
 
